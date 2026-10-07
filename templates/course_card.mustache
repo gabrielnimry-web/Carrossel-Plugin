@@ -1,0 +1,23 @@
+<div class="evg-card evg-course-card evg-course-card-compact">
+    <a href="{{url}}" class="evg-course-image-link" aria-label="{{fullname}}">
+        <div class="evg-img" style="background-image:url('{{imageurl}}')">
+            {{#hastag}}<span class="evg-badge badge-{{tagclass}}">{{tagname}}</span>{{/hastag}}
+            <span class="evg-time">{{duration}}</span>
+        </div>
+    </a>
+    <div class="evg-card-body">
+        <h5 class="evg-card-title"><a href="{{url}}">{{fullname}}</a></h5>
+
+        <div class="evg-course-actions">
+            <a href="{{url}}" class="btn btn-primary">{{actionlabel}}</a>
+            <button type="button" class="btn btn-outline-primary" data-action="coursecarousel-info"
+                    aria-haspopup="dialog">{{#str}}moreinformation, local_coursecarousel{{/str}}</button>
+        </div>
+    </div>
+    <template data-region="coursecarousel-summary">{{{summary}}}</template>
+    <template data-region="coursecarousel-footer">
+        <button type="button" class="btn btn-secondary" data-action="close">
+            {{#str}}close, local_coursecarousel{{/str}}
+        </button>
+    </template>
+</div>

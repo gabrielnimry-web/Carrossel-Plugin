@@ -1,0 +1,58 @@
+/* Basic standalone presentation. Institutional design belongs to the active theme. */
+.local-coursecarousel,.evg-catalog,.evg-video-page,.evg-content-page{max-width:100%;margin:0 auto;padding:1rem}
+.local-coursecarousel *,.evg-catalog *{box-sizing:border-box}
+.local-coursecarousel .evg-section{margin-bottom:2rem}
+.local-coursecarousel .evg-section-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.local-coursecarousel .evg-section-heading h2{margin:0}
+.local-coursecarousel .course-row{display:flex;flex-wrap:wrap;gap:1rem}
+.local-coursecarousel .course-item{flex:1 1 240px;min-width:0}
+.evg-card{display:flex;flex-direction:column;position:relative;min-width:0;height:100%;overflow:hidden;border:1px solid #ddd;border-radius:.25rem;background:var(--bs-body-bg,#fff);color:inherit}
+.evg-card .evg-course-image-link{display:block}
+.evg-card .evg-img{height:175px;position:relative;background-size:cover;background-position:center}
+.evg-card .evg-badge{position:absolute;top:.5rem;left:.5rem;padding:.2rem .5rem;background:#333;color:#fff;border-radius:.25rem;font-size:.8rem}
+.evg-card .evg-card-body{display:flex;flex:1;flex-direction:column;gap:.5rem;padding:1rem}
+.evg-card .evg-card-title{font-size:1rem;line-height:1.4;margin:0}
+.evg-card .evg-card-title a{color:inherit}
+.evg-card .evg-time{font-size:.8rem}
+.evg-course-card .evg-img .evg-time{position:absolute;right:.5rem;bottom:.5rem;background:#333;color:#fff;padding:.1rem .3rem}
+.evg-card .evg-course-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.evg-card .evg-course-actions>.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.local-coursecarousel .carousel-control-prev,.local-coursecarousel .carousel-control-next{width:2rem}
+.local-coursecarousel .carousel-control-prev-icon,.local-coursecarousel .carousel-control-next-icon{background-color:#555;border-radius:50%}
+.evg-catalog .evg-catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1rem}
+.evg-catalog .evg-search{margin-bottom:1rem}
+.evg-catalog .evg-search-field{display:flex;gap:.5rem}
+.evg-catalog .evg-search-input{flex:1;min-width:0}
+.evg-catalog .evg-filter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1rem}
+.evg-catalog .evg-filter-field span{display:block}
+.evg-catalog .evg-filter-field select{width:100%}
+.evg-catalog .evg-filter-actions{display:flex;gap:1rem;margin:1rem 0}
+.evg-video-4x3,.evg-video-page .evg-video-player{position:relative;aspect-ratio:16/9}
+.evg-video-4x3 iframe,.evg-video-page .evg-video-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.evg-video-page .evg-video-page-heading{margin-bottom:1rem}
+.evg-content-page .evg-content-page__body{overflow-wrap:anywhere}
+.evg-card a:focus-visible,.evg-card button:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+.local-coursecarousel .course-row.items-1>.course-item{flex:0 0 calc((100% - 0 * 1rem) / 1)}
+
+.local-coursecarousel .course-row.items-2>.course-item{flex:0 0 calc((100% - 1 * 1rem) / 2)}
+
+.local-coursecarousel .course-row.items-3>.course-item{flex:0 0 calc((100% - 2 * 1rem) / 3)}
+
+.local-coursecarousel .course-row.items-4>.course-item{flex:0 0 calc((100% - 3 * 1rem) / 4)}
+
+.local-coursecarousel .course-row.items-5>.course-item{flex:0 0 calc((100% - 4 * 1rem) / 5)}
+
+.local-coursecarousel .course-row.items-6>.course-item{flex:0 0 calc((100% - 5 * 1rem) / 6)}
+
+.local-coursecarousel .course-row.items-7>.course-item{flex:0 0 calc((100% - 6 * 1rem) / 7)}
+
+.local-coursecarousel .course-row.items-8>.course-item{flex:0 0 calc((100% - 7 * 1rem) / 8)}
+
+.local-coursecarousel .course-row.items-9>.course-item{flex:0 0 calc((100% - 8 * 1rem) / 9)}
+
+.local-coursecarousel .course-row.items-10>.course-item{flex:0 0 calc((100% - 9 * 1rem) / 10)}
+
+.local-coursecarousel .course-row.items-11>.course-item{flex:0 0 calc((100% - 10 * 1rem) / 11)}
+
+.local-coursecarousel .course-row.items-12>.course-item{flex:0 0 calc((100% - 11 * 1rem) / 12)}
+@media(max-width:767px){.local-coursecarousel .course-row[class*="items-"]>.course-item{flex:0 0 calc((100% - 1rem)/2)}} @media(max-width:575px){.local-coursecarousel .course-row[class*="items-"]>.course-item{flex-basis:100%}}

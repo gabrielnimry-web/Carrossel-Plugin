@@ -1,0 +1,9 @@
+category,shortname,name,datatype,required,signup,visible,sortorder,options,maxlength,startyear,endyear
+Dados Obrigatórios UFMG,cpf,CPF,text,1,1,1,1,,14,,
+Dados Obrigatórios UFMG,nomesocial,Nome Social,text,0,1,1,2,,255,,
+Dados Obrigatórios UFMG,datanascimento,Data de Nascimento,datetime,1,1,1,3,,,1900,current
+Dados Obrigatórios UFMG,sexo,Sexo,menu,1,1,1,4,Feminino|Masculino,,,
+Dados Obrigatórios UFMG,racacor,Raça/Cor,menu,1,1,1,5,Branca|Preta|Parda|Amarela|Indígena|Não informado,,,
+Dados Obrigatórios UFMG,estado,Estado (UF),menu,1,1,1,6,AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|Estrangeiro,,,
+Dados Obrigatórios UFMG,cidade_custom,Cidade,text,1,1,1,7,,255,,
+Dados Obrigatórios UFMG,escolaridade,Escolaridade,menu,1,1,1,8,Ensino Fundamental Incompleto|Ensino Fundamental Completo|Ensino Médio Incompleto|Ensino Médio Completo|Ensino Superior Incompleto|Ensino Superior Completo|Pós-graduação / Especialização|Mestrado|Doutorado,,,

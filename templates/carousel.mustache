@@ -1,0 +1,74 @@
+<section class="evg-section" aria-labelledby="{{carouselid}}-title">
+<div class="evg-section-heading">
+    <h2 id="{{carouselid}}-title">
+        {{title}}
+    </h2>
+    {{#showbutton}}
+    <a href="{{categoryurl}}" class="evg-view-all">{{#str}} showall, local_coursecarousel {{/str}} <span aria-hidden="true">›</span></a>
+    {{/showbutton}}
+</div>
+
+<div id="{{carouselid}}"
+     class="carousel slide"
+     data-ride="carousel"
+     data-bs-ride="carousel"
+     data-touch="true"
+     data-bs-touch="true"
+     data-wrap="true"
+     data-bs-wrap="true">
+
+    <div class="carousel-inner">
+
+        {{#slides}}
+
+        <div class="carousel-item {{#active}}active{{/active}}">
+
+            <div class="container-fluid">
+
+                <div class="course-row {{itemsclass}}">
+
+                    {{#courses}}
+
+                    <div class="course-item">
+
+                        {{{cardhtml}}}
+
+                    </div>
+
+                    {{/courses}}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {{/slides}}
+
+    </div>
+
+    <button class="carousel-control-prev"
+       type="button"
+       data-target="#{{carouselid}}"
+       data-bs-target="#{{carouselid}}"
+       data-slide="prev"
+       data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only visually-hidden">{{#str}} previous {{/str}}</span>
+
+    </button>
+
+    <button class="carousel-control-next"
+       type="button"
+       data-target="#{{carouselid}}"
+       data-bs-target="#{{carouselid}}"
+       data-slide="next"
+       data-bs-slide="next">
+
+        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only visually-hidden">{{#str}} next {{/str}}</span>
+
+    </button>
+
+</div>
+
+</section>

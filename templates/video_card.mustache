@@ -1,0 +1,51 @@
+<article class="evg-card evg-video-card">
+
+    <div class="position-relative">
+
+        <span class="evg-badge badge-video">
+
+            {{tagname}}
+
+        </span>
+
+        <div class="evg-video-4x3">
+
+            <iframe
+                sandbox='allow-scripts allow-same-origin allow-presentation'
+                referrerpolicy='strict-origin-when-cross-origin'
+                src="{{embedurl}}"
+                title="{{videotitle}}"
+                loading="lazy"
+                scrolling="no"
+                allowfullscreen
+                frameborder="0">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <div class="evg-card-body">
+
+        <h5 class="evg-card-title">
+
+            {{videotitle}}
+
+        </h5>
+
+        <div class="evg-time">
+
+            {{duration}}
+
+        </div>
+
+        <a class='evg-video-details-link'
+           href='{{videourl}}'
+           aria-label='{{#str}} openvideofullscreen, local_coursecarousel, {{videotitle}} {{/str}}'>
+            <span>{{#str}} openfullscreen, local_coursecarousel {{/str}}</span>
+            <span aria-hidden='true'>&rarr;</span>
+        </a>
+
+    </div>
+
+</article>

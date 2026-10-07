@@ -1,0 +1,92 @@
+<main class="evg-catalog">
+
+    <header class="evg-catalog-header">
+
+        <h1>
+            {{categoryname}}
+        </h1>
+
+        <p>
+            {{#str}} availablecontent, local_coursecarousel {{/str}}
+        </p>
+
+    </header>
+
+    <form method="get" class="evg-search" role="search">
+
+        {{#categoryid}}
+        <input type="hidden" name="categoryid" value="{{categoryid}}">
+        {{/categoryid}}
+
+        <div class="evg-search-field">
+
+            <input
+                type="text"
+                class="evg-search-input form-control"
+                name="search"
+                aria-label="{{#str}}search, local_coursecarousel{{/str}}"
+                value="{{search}}"
+                placeholder="{{#str}} searchplaceholder, local_coursecarousel {{/str}}">
+
+                <button type="submit" class="evg-search-button btn btn-primary">
+
+                    {{#str}} search, local_coursecarousel {{/str}}
+
+                </button>
+
+        </div>
+
+        {{#hasmetadatafilters}}
+        <fieldset class="evg-metadata-filters">
+            <legend>{{#str}} filterbymetadata, local_coursecarousel {{/str}}</legend>
+            <div class="evg-filter-grid">
+                {{#metadatafilters}}
+                <label class="evg-filter-field">
+                    <span>{{label}}</span>
+                    <select name="metadata[{{shortname}}]">
+                        <option value="">{{#str}} anyvalue, local_coursecarousel {{/str}}</option>
+                        {{#options}}
+                        <option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+                        {{/options}}
+                    </select>
+                </label>
+                {{/metadatafilters}}
+            </div>
+            <div class="evg-filter-actions">
+                <button type="submit" class="evg-filter-button btn btn-primary">
+                    {{#str}} applyfilters, local_coursecarousel {{/str}}
+                </button>
+                {{#hasactivefilters}}
+                <a href="{{clearurl}}" class="evg-clear-filters">
+                    {{#str}} clearfilters, local_coursecarousel {{/str}}
+                </a>
+                {{/hasactivefilters}}
+            </div>
+        </fieldset>
+        {{/hasmetadatafilters}}
+
+    </form>
+
+    <div class="evg-catalog-grid">
+
+        {{#courses}}
+
+        <div class="evg-catalog-item">
+            {{{cardhtml}}}
+
+        </div>
+
+        {{/courses}}
+
+    </div>
+
+    {{{paginghtml}}}
+
+    {{^hascourses}}
+    <div class="evg-empty" role="status">
+        <h2>{{#str}} noresults, local_coursecarousel {{/str}}</h2>
+        <p>{{#str}} noresultshelp, local_coursecarousel {{/str}}</p>
+    </div>
+    {{/hascourses}}
+
+</main>

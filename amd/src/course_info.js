@@ -1,0 +1,53 @@
+// This file is part of Moodle - http://moodle.org/
+/**
+ * Course information dialogs, including dynamically inserted dashboard cards.
+ *
+ * @module local_coursecarousel/course_info
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+define(['core/modal_factory', 'core/modal_events', 'core/notification'], function(ModalFactory, ModalEvents, Notification) {
+    let initialized = false;
+    let opening = false;
+
+    return {
+        init: function() {
+            if (initialized) {
+                return;
+            }
+            initialized = true;
+            document.addEventListener('click', function(event) {
+                const trigger = event.target.closest('[data-action="coursecarousel-info"]');
+                if (!trigger) {
+                    return;
+                }
+                event.preventDefault();
+                if (opening) {
+                    return;
+                }
+                const card = trigger.closest('.evg-course-card');
+                opening = true;
+                ModalFactory.create({
+                    title: card.querySelector('.evg-card-title a').innerHTML,
+                    body: card.querySelector('[data-region="coursecarousel-summary"]').innerHTML,
+                    footer: card.querySelector('[data-region="coursecarousel-footer"]').innerHTML
+                }).then(function(modal) {
+                    modal.getRoot().on('click', '[data-action="close"]', function() {
+                        modal.hide();
+                    });
+                    modal.getRoot().on(ModalEvents.hidden, function() {
+                        modal.destroy();
+                        opening = false;
+                        if (trigger.isConnected) {
+                            trigger.focus();
+                        }
+                    });
+                    modal.show();
+                    return modal;
+                }).catch(function(error) {
+                    opening = false;
+                    Notification.exception(error);
+                });
+            });
+        }
+    };
+});
